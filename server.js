@@ -54,10 +54,36 @@ const shoes = [
     { name: "Fifty-Inch Heels", price: 175, type: "heel" }
 ];
 
+app.get('/shoes',(req,res) => {
+    const itemId = req.params.shoes; 
+    res.send( `list of shoes${itemId}`);
+    
+    let filterShoes = shoes
+}
+const { 'max-Price':maxPrice , 'main-price':minPrice, type} = req.query
 
+//filter max-price
 
+app.get('/shoes/:max-price',(req,res) => {
+    const itemId = req.params.shoes; 
+    res.send( `list of shoes${itemId}`);
+if (maxPrice) {
+    filterShoes = filterShoes.filter(shoe =>shoe.price <= parseInt(maxPrice)   
 
+}
 
+   //filter min-price        
+
+    app.get('/shoes/:min-price',(req,res) => {
+    const itemId = req.params.shoes; 
+    res.send( `list of shoes${itemId}`);
+if (minPrice) {
+    filterShoes = filterShoes.filter(shoe =>shoe.price >= parseInt(mainPrice)                         
+}
+//filter by type
+if (type) {
+filterShoes = filterShoes.filter(shoe =>shoe.type
+}
 
 app.listen(3000,() => {
     console.log ('server is running on part 3000')
