@@ -66,7 +66,7 @@ const { 'max-Price':maxPrice , 'main-price':minPrice, type} = req.query
 
 app.get('/shoes/:max-price',(req,res) => {
     const itemId = req.params.shoes; 
-    res.send( `list of shoes${itemId}`);
+    res.send( `maxPrice${itemId}`);
 if (maxPrice) {
     filterShoes = filterShoes.filter(shoe =>shoe.price <= parseInt(maxPrice)   
 
@@ -76,11 +76,14 @@ if (maxPrice) {
 
     app.get('/shoes/:min-price',(req,res) => {
     const itemId = req.params.shoes; 
-    res.send( `list of shoes${itemId}`);
+    res.send( `minPrice${itemId}`);
 if (minPrice) {
     filterShoes = filterShoes.filter(shoe =>shoe.price >= parseInt(mainPrice)                         
 }
 //filter by type
+   app.get('/shoes/:type',(req,res) => {
+    const itemId = req.params.shoes; 
+    res.send( `type${itemId}`);      
 if (type) {
 filterShoes = filterShoes.filter(shoe =>shoe.type
 }
